@@ -1,6 +1,6 @@
 package com.trycloud.pages;
 
-import com.trycloud.utils.Driver;
+import com.trycloud.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 

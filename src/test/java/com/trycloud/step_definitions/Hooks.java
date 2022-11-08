@@ -1,7 +1,7 @@
-package com.trycloud.steps;
+package com.trycloud.step_definitions;
 
 
-import com.trycloud.utils.Driver;
+import com.trycloud.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;

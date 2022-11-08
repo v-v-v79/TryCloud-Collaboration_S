@@ -1,7 +1,7 @@
 package com.trycloud.pages;
 
-import com.trycloud.utils.Config;
-import com.trycloud.utils.Driver;
+import com.trycloud.utilities.Config;
+import com.trycloud.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
