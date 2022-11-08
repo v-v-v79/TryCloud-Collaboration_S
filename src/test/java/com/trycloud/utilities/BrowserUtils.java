@@ -515,4 +515,11 @@ public class BrowserUtils {
         wait.until(ExpectedConditions.elementToBeClickable(element));
 
     }
+
+    public static void verifyTitleEquals(String expectedTitle) {
+
+        String actualTitle = Driver.getDriver().getTitle();
+
+        Assert.assertEquals(expectedTitle, actualTitle);
+    }
 }
