@@ -43,7 +43,7 @@
                         </goals>
                         <configuration>
                             <outputDirectory>target/cucumber-reports.html</outputDirectory>
-                            <cucumberOutput>target/json-report</cucumberOutput>
+                            <cucumberOutput>target/json-report.json</cucumberOutput>
                         </configuration>
                     </execution>
                 </executions>
