@@ -7,14 +7,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.interactions.Actions;
-import tryCloud.com.pages.MainModulePage;
-import tryCloud.com.utilities.BrowserUtils;
-import tryCloud.com.utilities.Driver;
+
 
 public class mainModulesStep_def {
 
     MainModulePage mainModulePage = new MainModulePage();
-   Actions actions = new Actions(Driver.getDriver()
+   Actions actions = new Actions(Driver.getDriver());
+
 
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
@@ -30,7 +29,7 @@ public class mainModulesStep_def {
 
     @When("user click login button")
     public void user_click_login_button() {
-        BrowserUtils.clickElement(mainModulePage.btn_login);
+        mainModulePage.btn_login.click();
     }
 
 

@@ -1,7 +1,7 @@
 Feature: Accessing all the main modules
   of the app
   As a user, I should be able accessing all the main modules of the app
-
+@ui
   Background:
     Given user is on the login page
 

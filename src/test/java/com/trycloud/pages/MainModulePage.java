@@ -1,14 +1,16 @@
 package com.trycloud.pages;
 
+import com.trycloud.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static tryCloud.com.utilities.Driver.getDriver;
+
 
 public class MainModulePage {
     public MainModulePage() {
-        PageFactory.initElements(getDriver(),this);
+        PageFactory.initElements(Driver.getDriver(),this);
+
 
     }
     @FindBy(xpath = "//input[@id='user']")
