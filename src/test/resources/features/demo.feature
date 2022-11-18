@@ -1,6 +1,5 @@
 Feature: As a user, I should be able to log in.
 
-  @ui
 
   Scenario Outline: Verify login with valid credentials
     Given user on the login page

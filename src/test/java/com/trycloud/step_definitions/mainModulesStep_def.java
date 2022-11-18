@@ -6,6 +6,7 @@ import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 
 
@@ -15,9 +16,10 @@ public class mainModulesStep_def {
    Actions actions = new Actions(Driver.getDriver());
 
 
+
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
-        Driver.getDriver().get("https://qa.trycloud.net/index.php/login?clear=1");
+        Driver.getDriver().get("http://qa2.trycloud.net/index.php/apps/dashboard/");
 
     }
 
@@ -34,7 +36,24 @@ public class mainModulesStep_def {
 
 
     @Then("user should be able accessing all the main modules")
-    public void userShouldBeAbleAccessingAllTheMainModules() {
+    public void userShouldBeAbleAccessingAllTheMainModules(){
+    actions.moveToElement(mainModulePage.recommendedFiles);
+    String expected="Recommended files";
+    String actual = mainModulePage.recommendedFiles.getText();
+
+        Assert.assertTrue(actual.contains(expected));
+        actions.moveToElement(mainModulePage.talkMentions);
+     expected="Talk mentions";
+    actual = mainModulePage.talkMentions.getText();
+
+        Assert.assertTrue(actual.contains(expected));
+
+        actions.moveToElement(mainModulePage.upcomingEvents);
+     expected="Upcoming Events";
+   actual = mainModulePage.upcomingEvents.getText();
+
+        Assert.assertTrue(actual.contains(expected));
+
 
 
     }
