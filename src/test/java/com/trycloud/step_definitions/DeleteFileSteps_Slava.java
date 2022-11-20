@@ -1,6 +1,6 @@
 package com.trycloud.step_definitions;
 
-import com.trycloud.pages.AllFilesPage_Slava;
+import com.trycloud.pages.DeleteFilesPage_Slava;
 import com.trycloud.pages.LoginPage;
 import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.Driver;
@@ -14,7 +14,7 @@ import org.openqa.selenium.interactions.Actions;
 public class DeleteFileSteps_Slava {
 
     LoginPage loginPage = new LoginPage();
-    AllFilesPage_Slava allFilesPage_slava = new AllFilesPage_Slava();
+    DeleteFilesPage_Slava deleteFiles_Page_slava = new DeleteFilesPage_Slava();
     Actions actions = new Actions(Driver.getDriver());
     String expectedFileName = "";
     String actualFileName = "";
@@ -35,37 +35,37 @@ public class DeleteFileSteps_Slava {
     @When("user click action-icon from any file on the page")
     public void user_click_action_icon_from_any_file_on_the_page() {
         BrowserUtils.sleep(3);
-        BrowserUtils.hover(allFilesPage_slava.firstFileName);
+        BrowserUtils.hover(deleteFiles_Page_slava.firstFileName);
         BrowserUtils.sleep(3);
-        actualFileName = allFilesPage_slava.firstFileName.getText();
-        BrowserUtils.hover(allFilesPage_slava.firstFileActionsMenu);
-        allFilesPage_slava.firstFileActionsMenu.click();
+        actualFileName = deleteFiles_Page_slava.firstFileName.getText();
+        BrowserUtils.hover(deleteFiles_Page_slava.firstFileActionsMenu);
+        deleteFiles_Page_slava.firstFileActionsMenu.click();
         BrowserUtils.sleep(3);
     }
     @And("user choose the Delete file option")
     public void userChooseTheDeleteFileOption() {
         BrowserUtils.sleep(3);
-        actions.moveToElement(allFilesPage_slava.fileDeleteButton)
+        actions.moveToElement(deleteFiles_Page_slava.fileDeleteButton)
                 .pause(2).click().pause(2).perform();
     }
 
     @When("the user clicks the Deleted files sub-module on the left side")
     public void theUserClicksTheDeletedFilesSubModuleOnTheLeftSide() {
-        BrowserUtils.hover(allFilesPage_slava.deletedFilesMenu);
-        allFilesPage_slava.deletedFilesMenu.click();
+        BrowserUtils.hover(deleteFiles_Page_slava.deletedFilesMenu);
+        deleteFiles_Page_slava.deletedFilesMenu.click();
         BrowserUtils.waitForPageToLoad(30);
     }
 
     @Then("Verify the deleted file is displayed on the page.")
     public void verify_the_deleted_file_is_displayed_on_the_page() {
         BrowserUtils.sleep(2);
-        actions.moveToElement(allFilesPage_slava.sortDeleted)
+        actions.moveToElement(deleteFiles_Page_slava.sortDeleted)
                 .pause(1).click().pause(2).click().pause(1).perform();
         BrowserUtils.sleep(2);
-        expectedFileName = allFilesPage_slava.lastDeletedFileName.getText();
+        expectedFileName = deleteFiles_Page_slava.lastDeletedFileName.getText();
         BrowserUtils.sleep(2);
         Assert.assertEquals(expectedFileName, actualFileName);
-        actions.moveToElement(allFilesPage_slava.restoreButton)
+        actions.moveToElement(deleteFiles_Page_slava.restoreButton)
                 .pause(1).click().pause(1).perform();
 
     }

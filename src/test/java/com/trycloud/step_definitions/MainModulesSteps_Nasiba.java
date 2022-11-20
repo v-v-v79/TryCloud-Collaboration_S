@@ -1,6 +1,6 @@
 package com.trycloud.step_definitions;
 
-import com.trycloud.pages.MainModulePage;
+import com.trycloud.pages.MainModulesPage_Nasiba;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -9,9 +9,9 @@ import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 
 
-public class mainModulesStep_def {
+public class MainModulesSteps_Nasiba {
 
-    MainModulePage mainModulePage = new MainModulePage();
+    MainModulesPage_Nasiba mainModulesPageNasiba = new MainModulesPage_Nasiba();
     Actions actions = new Actions(Driver.getDriver());
 
 
@@ -23,32 +23,32 @@ public class mainModulesStep_def {
 
     @When("user  enter valid {string} and {string}")
     public void user_enter_valid_and(String username, String password) {
-        mainModulePage.login(username, password);
+        mainModulesPageNasiba.login(username, password);
 
     }
 
     @When("user click login button")
     public void user_click_login_button() {
-        mainModulePage.btn_login.click();
+        mainModulesPageNasiba.btn_login.click();
     }
 
 
     @Then("user should be able accessing all the main modules")
     public void userShouldBeAbleAccessingAllTheMainModules() {
-        actions.moveToElement(mainModulePage.recommendedFiles);
+        actions.moveToElement(mainModulesPageNasiba.recommendedFiles);
         String expected = "Recommended files";
-        String actual = mainModulePage.recommendedFiles.getText();
+        String actual = mainModulesPageNasiba.recommendedFiles.getText();
 
         Assert.assertTrue(actual.contains(expected));
-        actions.moveToElement(mainModulePage.talkMentions);
+        actions.moveToElement(mainModulesPageNasiba.talkMentions);
         expected = "Talk mentions";
-        actual = mainModulePage.talkMentions.getText();
+        actual = mainModulesPageNasiba.talkMentions.getText();
 
         Assert.assertTrue(actual.contains(expected));
 
-        actions.moveToElement(mainModulePage.upcomingEvents);
+        actions.moveToElement(mainModulesPageNasiba.upcomingEvents);
         expected = "Upcoming events";
-        actual = mainModulePage.upcomingEvents.getText();
+        actual = mainModulesPageNasiba.upcomingEvents.getText();
 
         Assert.assertTrue(actual.contains(expected));
 

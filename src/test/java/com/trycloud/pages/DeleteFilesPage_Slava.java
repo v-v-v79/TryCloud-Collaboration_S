@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AllFilesPage_Slava {
+public class DeleteFilesPage_Slava {
 
-    public AllFilesPage_Slava() {
+    public DeleteFilesPage_Slava() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
