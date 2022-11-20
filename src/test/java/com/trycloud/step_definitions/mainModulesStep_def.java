@@ -1,7 +1,6 @@
 package com.trycloud.step_definitions;
 
 import com.trycloud.pages.MainModulePage;
-import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,8 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 public class mainModulesStep_def {
 
     MainModulePage mainModulePage = new MainModulePage();
-   Actions actions = new Actions(Driver.getDriver());
-
+    Actions actions = new Actions(Driver.getDriver());
 
 
     @Given("user is on the login page")
@@ -36,24 +34,23 @@ public class mainModulesStep_def {
 
 
     @Then("user should be able accessing all the main modules")
-    public void userShouldBeAbleAccessingAllTheMainModules(){
-    actions.moveToElement(mainModulePage.recommendedFiles);
-    String expected="Recommended files";
-    String actual = mainModulePage.recommendedFiles.getText();
+    public void userShouldBeAbleAccessingAllTheMainModules() {
+        actions.moveToElement(mainModulePage.recommendedFiles);
+        String expected = "Recommended files";
+        String actual = mainModulePage.recommendedFiles.getText();
 
         Assert.assertTrue(actual.contains(expected));
         actions.moveToElement(mainModulePage.talkMentions);
-     expected="Talk mentions";
-    actual = mainModulePage.talkMentions.getText();
+        expected = "Talk mentions";
+        actual = mainModulePage.talkMentions.getText();
 
         Assert.assertTrue(actual.contains(expected));
 
         actions.moveToElement(mainModulePage.upcomingEvents);
-     expected="Upcoming Events";
-   actual = mainModulePage.upcomingEvents.getText();
+        expected = "Upcoming events";
+        actual = mainModulePage.upcomingEvents.getText();
 
         Assert.assertTrue(actual.contains(expected));
-
 
 
     }
